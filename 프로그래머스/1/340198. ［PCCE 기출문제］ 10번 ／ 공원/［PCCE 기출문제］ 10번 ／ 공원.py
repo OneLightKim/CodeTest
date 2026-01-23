@@ -1,5 +1,7 @@
 #[PCCE 기출문제] 10번 / 공원
 #mats를 sort
+#5중포문
+#early stop
 def solution(mats, park):
     answer = 0
     # 필 수 있는 가장 큰 돗자리를 구해야함.
@@ -16,6 +18,10 @@ def solution(mats, park):
                     for j in range(mat):
                         if park[r+i][c+j] != '-1':
                             count += 1
+                            break
+                    else:
+                        continue
+                    break
                 if count == 0:
                     return mat
             
